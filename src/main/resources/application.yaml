@@ -1,0 +1,13 @@
+server:
+  port: 8181
+
+
+elasticsearch:
+  host: localhost
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

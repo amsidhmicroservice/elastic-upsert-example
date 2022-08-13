@@ -1,0 +1,186 @@
+{
+	"info": {
+		"_postman_id": "bdcfbb57-a731-4ceb-afe9-776fb71046c0",
+		"name": "elastic-rest-high-level-client",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "502420"
+	},
+	"item": [
+		{
+			"name": "post_profile1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\":\"Amsidh\",\r\n    \"lastName\":\"Lokhande\",\r\n    \"technologies\":[\r\n        {\r\n            \"name\":\"Java\",\r\n            \"yearsOfExperience\":\"12.8\"\r\n        },\r\n        {\r\n            \"name\":\"Springboot\",\r\n            \"yearsOfExperience\":\"12\"\r\n        },\r\n        {\r\n            \"name\":\"Microservice\",\r\n            \"yearsOfExperience\":\"8.5\"\r\n        },\r\n        {\r\n            \"name\":\"Kubernetes\",\r\n            \"yearsOfExperience\":\"5.4\"\r\n        }\r\n    ],\r\n    \"location\":{\r\n        \"lat\":\"18.516726\",\r\n        \"lon\":\"73.856255\"\r\n    },\r\n    \"emails\":[\"amsidhlokhande@gmail.com\",\"amsidhmicroservice@gmail.com\",\"amsidhgcp@gmail.com\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8181/api/v1/profiles",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"api",
+						"v1",
+						"profiles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-profile-by-id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\":\"Amsidh\",\r\n    \"lastName\":\"Lokhande\",\r\n    \"technologies\":[\r\n        {\r\n            \"name\":\"Java\",\r\n            \"yearsOfExperience\":\"12.8\"\r\n        },\r\n        {\r\n            \"name\":\"Springboot\",\r\n            \"yearsOfExperience\":\"12\"\r\n        },\r\n        {\r\n            \"name\":\"Microservice\",\r\n            \"yearsOfExperience\":\"8.5\"\r\n        },\r\n        {\r\n            \"name\":\"Kubernetes\",\r\n            \"yearsOfExperience\":\"5.4\"\r\n        }\r\n    ],\r\n    \"location\":{\r\n        \"lat\":\"18.516726\",\r\n        \"lon\":\"73.856255\"\r\n    },\r\n    \"emails\":[\"amsidhlokhande@gmail.com\",\"amsidhmicroservice@gmail.com\",\"amsidhgcp@gmail.com\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8181/api/v1/profiles/798fb883-11aa-46dd-9f1c-f48cb066562f",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"api",
+						"v1",
+						"profiles",
+						"798fb883-11aa-46dd-9f1c-f48cb066562f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete-profile-by-id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\":\"Amsidh\",\r\n    \"lastName\":\"Lokhande\",\r\n    \"technologies\":[\r\n        {\r\n            \"name\":\"Java\",\r\n            \"yearsOfExperience\":\"12.8\"\r\n        },\r\n        {\r\n            \"name\":\"Springboot\",\r\n            \"yearsOfExperience\":\"12\"\r\n        },\r\n        {\r\n            \"name\":\"Microservice\",\r\n            \"yearsOfExperience\":\"8.5\"\r\n        },\r\n        {\r\n            \"name\":\"Kubernetes\",\r\n            \"yearsOfExperience\":\"5.4\"\r\n        }\r\n    ],\r\n    \"location\":{\r\n        \"lat\":\"18.516726\",\r\n        \"lon\":\"73.856255\"\r\n    },\r\n    \"emails\":[\"amsidhlokhande@gmail.com\",\"amsidhmicroservice@gmail.com\",\"amsidhgcp@gmail.com\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8181/api/v1/profiles/798fb883-11aa-46dd-9f1c-f48cb066562f",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"api",
+						"v1",
+						"profiles",
+						"798fb883-11aa-46dd-9f1c-f48cb066562f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-profile",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"5f641970-c046-4003-8304-ae9ecf33ee2c\",\r\n    \"firstName\":\"Amsidh\",\r\n    \"lastName\":\"Lokhande\",\r\n    \"technologies\":[\r\n        {\r\n            \"name\":\"Java\",\r\n            \"yearsOfExperience\":\"12.8\"\r\n        },\r\n        {\r\n            \"name\":\"Springboot\",\r\n            \"yearsOfExperience\":\"12\"\r\n        },\r\n        {\r\n            \"name\":\"Microservice\",\r\n            \"yearsOfExperience\":\"8.5\"\r\n        },\r\n        {\r\n            \"name\":\"Kubernetes\",\r\n            \"yearsOfExperience\":\"5.4\"\r\n        }\r\n    ],\r\n    \"location\":{\r\n        \"lat\":\"18.516726\",\r\n        \"lon\":\"73.856255\"\r\n    },\r\n    \"emails\":[\"amsidhlokhande@gmail.com\",\"amsidhmicroservice@gmail.com\",\"amsidhgcp@gmail.com\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8181/api/v1/profiles",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"api",
+						"v1",
+						"profiles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-all-profiles",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8181/api/v1/profiles",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"api",
+						"v1",
+						"profiles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post_profile2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\":\"Anjali\",\r\n    \"lastName\":\"Lokhande\",\r\n    \"technologies\":[\r\n        {\r\n            \"name\":\"BEd\",\r\n            \"yearsOfExperience\":\"1.8\"\r\n        },\r\n        {\r\n            \"name\":\"BA\",\r\n            \"yearsOfExperience\":\"3\"\r\n        }\r\n    ],\r\n    \"location\":{\r\n        \"lat\":\"40.516726\",\r\n        \"lon\":\"100.856255\"\r\n    },\r\n    \"emails\":[\"nakushapandare@gmail.com\",\"anjalilokhande@gmail.com\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8181/api/v1/profiles",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"api",
+						"v1",
+						"profiles"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
