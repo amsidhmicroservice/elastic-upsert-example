@@ -6,6 +6,10 @@ import org.elasticsearch.client.RestHighLevelClient;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.elasticsearch.client.ClientConfiguration;
+import org.springframework.data.elasticsearch.client.RestClients;
+import org.springframework.data.elasticsearch.core.ElasticsearchOperations;
+import org.springframework.data.elasticsearch.core.ElasticsearchRestTemplate;
 
 @Configuration
 public class ElasticsearchConfiguration {
@@ -13,12 +17,18 @@ public class ElasticsearchConfiguration {
     @Value("${elasticsearch.host}")
     private String elasticsearchHost;
 
-    @Bean(destroyMethod = "close")
-    public RestHighLevelClient getRestHighLevelClient() {
-        RestHighLevelClient restHighLevelClient = new RestHighLevelClient(
-                RestClient.builder(new HttpHost(elasticsearchHost, 9200)));
+    @Bean
+    RestHighLevelClient client() {
+        ClientConfiguration clientConfiguration = ClientConfiguration.builder()
+                .connectedTo("localhost:9200")
+                .build();
 
-        return restHighLevelClient;
+        return RestClients.create(clientConfiguration)
+                .rest();
+    }
 
+    @Bean
+    public ElasticsearchOperations elasticsearchTemplate() {
+        return new ElasticsearchRestTemplate(client());
     }
 }

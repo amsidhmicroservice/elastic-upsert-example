@@ -8,15 +8,15 @@ import java.io.IOException;
 import java.util.List;
 
 public interface ProfileService {
-    String createProfileDocument(ProfileDocument profileDocument) throws IOException;
+    ProfileDocument createProfileDocument(ProfileDocument profileDocument);
 
-    ProfileDocument findById(String id) throws IOException;
+    ProfileDocument findById(String id);
 
-    ProfileDocument updateProfile(ProfileDocument profileDocument) throws IOException;
+    ProfileDocument updateProfile(ProfileDocument profileDocument);
 
-    List<ProfileDocument> findAllProfiles() throws IOException;
+    List<ProfileDocument> findAllProfiles();
 
-    List<ProfileDocument> findProfilesByTechnologyName(String technologyName) throws IOException;
+    List<ProfileDocument> findProfilesByTechnologyName(String technologyName);
 
-    String deleteProfileById(String id) throws IOException;
+    void deleteProfileById(String id);
 }
