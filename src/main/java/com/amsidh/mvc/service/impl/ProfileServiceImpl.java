@@ -60,13 +60,15 @@ public class ProfileServiceImpl implements ProfileService {
     }
 
     @Override
-    public String updateProfile(ProfileDocument profileDocument) throws IOException {
+    public ProfileDocument updateProfile(ProfileDocument profileDocument) throws IOException {
         ProfileDocument oldProfileDocument = findById(profileDocument.getId());
         UpdateRequest updateRequest = new UpdateRequest(INDEX, TYPE, oldProfileDocument.getId());
+
         Map profileDocumentMap = objectMapper.convertValue(profileDocument, Map.class);
         updateRequest.doc(profileDocumentMap);
         UpdateResponse updateResponse = restHighLevelClient.update(updateRequest, RequestOptions.DEFAULT);
-        return updateResponse.getResult().name();
+        log.info(String.format("ProfileDocument %s successfully", updateResponse.getResult().name()));
+        return findById(updateResponse.getId());
     }
 
     @Override
