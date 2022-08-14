@@ -28,7 +28,7 @@ public class ProfileController {
     }
 
     @PutMapping
-    public String updateProfile(@RequestBody ProfileDocument profileDocument) throws IOException {
+    public ProfileDocument updateProfile(@RequestBody ProfileDocument profileDocument) throws IOException {
         return profileService.updateProfile(profileDocument);
     }
 

@@ -12,7 +12,7 @@ public interface ProfileService {
 
     ProfileDocument findById(String id) throws IOException;
 
-    String updateProfile(ProfileDocument profileDocument) throws IOException;
+    ProfileDocument updateProfile(ProfileDocument profileDocument) throws IOException;
 
     List<ProfileDocument> findAllProfiles() throws IOException;
 
