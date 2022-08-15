@@ -1,13 +1,27 @@
 server:
   port: 8181
 
-
-elasticsearch:
-  host: localhost
-
-
 management:
   endpoints:
     web:
       exposure:
         include: "*"
+  health:
+    elasticsearch:
+      enabled: true
+
+spring:
+  elasticsearch:
+    uris:
+      - http://localhost:9200
+    username:
+    password:
+    connection-timeout: 120s
+    socket-timeout: 60s
+    restclient:
+      sniffer:
+        interval: 5m
+
+logging:
+  level:
+    tracer: TRACE

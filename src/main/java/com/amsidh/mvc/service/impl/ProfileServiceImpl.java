@@ -3,7 +3,6 @@ package com.amsidh.mvc.service.impl;
 import com.amsidh.mvc.document.ProfileDocument;
 import com.amsidh.mvc.repository.ProfileDocumentRepository;
 import com.amsidh.mvc.service.ProfileService;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -19,7 +18,6 @@ import java.util.stream.StreamSupport;
 @RequiredArgsConstructor
 public class ProfileServiceImpl implements ProfileService {
     private final ProfileDocumentRepository profileDocumentRepository;
-    private final ObjectMapper objectMapper;
 
     @Override
     public ProfileDocument createProfileDocument(ProfileDocument profileDocument) {
