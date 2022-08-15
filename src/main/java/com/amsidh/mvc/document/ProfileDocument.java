@@ -26,7 +26,7 @@ public class ProfileDocument {
     @Field(type = FieldType.Nested, includeInParent = true)
     private List<Technologies> technologies;
 
-    //@Field(type = FieldType.Object)
+    @Field(type = FieldType.Object)
     private Location location;
 
     @Field(type = FieldType.Keyword)
