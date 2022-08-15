@@ -13,7 +13,7 @@ management:
 spring:
   elasticsearch:
     uris:
-      - http://localhost:9200
+      - http://34.123.5.213:9200
     username:
     password:
     connection-timeout: 120s
