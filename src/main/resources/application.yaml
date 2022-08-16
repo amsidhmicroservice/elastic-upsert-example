@@ -13,7 +13,7 @@ management:
 spring:
   elasticsearch:
     uris:
-      - http://34.123.5.213:9200
+      - http://35.192.0.68:9200
     username:
     password:
     connection-timeout: 120s
@@ -21,6 +21,16 @@ spring:
     restclient:
       sniffer:
         interval: 5m
+  data:
+    elasticsearch:
+      cluster-nodes: 35.192.0.68:9200
+      cluster-name: elasticsearch
+      repositories:
+        enabled: true
+
+
+
+
 
 logging:
   level:
