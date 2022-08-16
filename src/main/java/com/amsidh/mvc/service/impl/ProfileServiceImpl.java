@@ -25,6 +25,7 @@ import java.util.stream.Collectors;
 @Slf4j
 @RequiredArgsConstructor
 public class ProfileServiceImpl implements ProfileService {
+
     private final ProfileDocumentRepository profileDocumentRepository;
 
     private static final String PROFILE_INDEX = "profile";
