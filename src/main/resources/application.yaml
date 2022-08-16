@@ -6,9 +6,9 @@ management:
     web:
       exposure:
         include: "*"
-  health:
-    elasticsearch:
-      enabled: true
+#  health:
+#    elasticsearch:
+#      enabled: true
 
 spring:
   elasticsearch:
