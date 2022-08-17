@@ -13,9 +13,9 @@ management:
 spring:
   elasticsearch:
     uris:
-      - https://34.72.131.199:9200
-    username: elastic
-    password: KPHtrb79V8d20w27dD3bI7X1
+      - http://localhost:9200
+    username:
+    password:
     connection-timeout: 120s
     socket-timeout: 60s
     restclient:
