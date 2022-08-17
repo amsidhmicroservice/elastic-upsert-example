@@ -17,7 +17,7 @@ public class ProfileDocument {
     @Field(type = FieldType.Text)
     private String id;
 
-    @Field(type = FieldType.Text)
+    @Field(type = FieldType.Text, index = true)
     private String firstName;
 
     @Field(type = FieldType.Text)

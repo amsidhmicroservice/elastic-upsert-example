@@ -60,7 +60,10 @@ public class ElasticsearchConfiguration {
                             return requestConfigBuilder.setConnectTimeout(5000)
                                     .setSocketTimeout(120000);
                         }
-                    }).setDefaultHeaders(compatibilityHeaders()));
+                    })
+                    .setDefaultHeaders(compatibilityHeaders())
+
+            );
             System.out.println("elasticsearch client created");
             return client;
         } catch (Exception e) {

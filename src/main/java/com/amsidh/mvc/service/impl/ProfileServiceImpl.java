@@ -10,7 +10,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.UUID;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
@@ -28,28 +27,25 @@ public class ProfileServiceImpl implements ProfileService {
         UUID uuid = UUID.randomUUID();
         profileDocument.setId(uuid.toString());
         log.info("Going to save ProfileDocument {}", profileDocument);
-        ProfileDocument savedProfileDocument = profileDocumentRepository.save(profileDocument);
-        log.info("Saved ProfileDocument {}", savedProfileDocument);
-        if (null != savedProfileDocument) {
-            return savedProfileDocument;
-        } else {
-            return null;
-        }
+        return profileDocumentRepository.save(profileDocument);
     }
 
     @Override
     public ProfileDocument findById(String id) {
+        log.info("Find profile document with id {}", id);
         return profileDocumentRepository.findById(id).orElseThrow(() -> new RuntimeException(String.format("Profile with id %s not found", id)));
     }
 
     @Override
     public ProfileDocument updateProfile(ProfileDocument profileDocument) {
         ProfileDocument existingProfileDocument = findById(profileDocument.getId());
-
-        Optional.ofNullable(existingProfileDocument).ifPresent(profile -> {
-            profileDocumentRepository.save(profileDocument);
-        });
-        return findById(profileDocument.getId());
+        log.info("Updating profile document with id {}", profileDocument.getId());
+        if (existingProfileDocument != null) {
+            return profileDocumentRepository.save(profileDocument);
+        } else {
+            log.error("Profile document is not updated");
+            return null;
+        }
     }
 
     @Override
