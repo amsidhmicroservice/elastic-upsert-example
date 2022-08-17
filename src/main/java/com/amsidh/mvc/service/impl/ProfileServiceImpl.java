@@ -5,6 +5,7 @@ import com.amsidh.mvc.repository.ProfileDocumentRepository;
 import com.amsidh.mvc.service.ProfileService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
+import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -21,11 +22,19 @@ public class ProfileServiceImpl implements ProfileService {
     private final ProfileDocumentRepository profileDocumentRepository;
     private final ObjectMapper objectMapper;
 
+    @SneakyThrows
     @Override
     public ProfileDocument createProfileDocument(ProfileDocument profileDocument) {
         UUID uuid = UUID.randomUUID();
         profileDocument.setId(uuid.toString());
-        return profileDocumentRepository.save(profileDocument);
+        log.info("Going to save ProfileDocument {}", profileDocument);
+        ProfileDocument savedProfileDocument = profileDocumentRepository.save(profileDocument);
+        log.info("Saved ProfileDocument {}", savedProfileDocument);
+        if (null != savedProfileDocument) {
+            return savedProfileDocument;
+        } else {
+            return null;
+        }
     }
 
     @Override
